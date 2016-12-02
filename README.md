@@ -40,7 +40,15 @@ where 'library' is the name of your library module.
 
 ## Using
 
-You may need this to use the listview
+You may need this to use the listview.  Put this into your xml file:
+```xml
+<com.scnu.zhou.library.PullToRefreshListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+</com.scnu.zhou.library.PullToRefreshListView>
+```
+And put this into your activity file:
 ```java
 pullToRefreshListView.setOnPullToRefreshListener(new PullToRefreshListView.OnPullToRefreshListener() {
       @Override
