@@ -20,7 +20,7 @@ and:
 
 ```gradle
 dependencies {
-    compile 'com.github.jitpack:android-example:1.0.1'
+    compile 'com.github.zhouchupen:PullToRefreshListView:v1.0'
 }
 ```
 
