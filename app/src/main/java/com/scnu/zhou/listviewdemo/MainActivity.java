@@ -35,31 +35,6 @@ public class MainActivity extends AppCompatActivity implements PullToRefreshList
         adapter = new ArraysAdapter(array);
         pullToRefreshListView.setAdapter(adapter);
         pullToRefreshListView.setOnPullToRefreshListener(this);
-
-        pullToRefreshListView.setOnPullToRefreshListener(new PullToRefreshListView.OnPullToRefreshListener() {
-            @Override
-            public void onRefresh() {
-
-                // TODO something to refesh
-
-                pullToRefreshListView.onRefreshCompleted();  // please use it when you finish refreshing.
-            }
-
-            @Override
-            public void onLoadMore() {
-
-                // TODO something to load more
-
-                pullToRefreshListView.onLoadMoreCompleted();  // please use it when you finish loading.
-                pullToRefreshListView.onLoadMoreAllCompleted();  // please use it when you finish all loading.
-            }
-
-            @Override
-            public void onOutOfTime() {
-
-                // TODO something to warning of being out of time
-            }
-        });
     }
 
     @Override
