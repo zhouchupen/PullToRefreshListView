@@ -1,6 +1,7 @@
-package com.scnu.zhou.widget;
+package com.scnu.zhou.signer.ui.widget.listview;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.scnu.zhou.signer.R;
 
 /**
  * Created by zhou on 16/10/21.
@@ -338,7 +341,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
     }
 
 
-    private void hideHeaderView(){
+    public void hideHeaderView(){
         //HeadView.setPadding(0, - headHeight, 0, 0);
 
         if (state == STATE_REFRESHING) {
@@ -366,7 +369,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
     }
 
 
-    private void hideFooterView(){
+    public void hideFooterView(){
         isLoadingMore = false;
         iv_bloading.clearAnimation();
         FootView.setPadding(0, - footHeight, 0, 0);
@@ -374,7 +377,6 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
 
 
     //支持到SDK8需要增加@SuppressLint("NewApi")。
-    /*
     @SuppressLint("NewApi")
     @Override
     protected boolean overScrollBy(int deltaX, int deltaY, int scrollX,
@@ -383,7 +385,7 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
         return super.overScrollBy(deltaX, deltaY, scrollX, scrollY,
                 scrollRangeX, scrollRangeY, maxOverScrollX, newMaxOverScrollY,
                 isTouchEvent);
-    }*/
+    }
 
 
     /**
@@ -487,5 +489,17 @@ public class PullToRefreshListView extends ListView implements AbsListView.OnScr
         else{
             return false;
         }
+    }
+
+    /**
+     * 重置状态
+     */
+    public void resetState(){
+
+        state = STATE_PULL_DOWN;
+        isCompleted = false;
+
+        hideFooterView();
+        hideHeaderView();
     }
 }
